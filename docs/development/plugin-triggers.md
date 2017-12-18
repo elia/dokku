@@ -1013,7 +1013,7 @@ newrev=$2
 APP=${refname/*\//}.$reference_app
 
 if [[ ! -d "$DOKKU_ROOT/$APP" ]]; then
-  REFERENCE_REPO="$DOKKU_ROOT/$reference_app
+  REFERENCE_REPO="$DOKKU_ROOT/$reference_app"
   git clone --bare --shared --reference "$REFERENCE_REPO" "$REFERENCE_REPO" "$DOKKU_ROOT/$APP" > /dev/null
 fi
 plugn trigger receive-app $APP $newrev
@@ -1069,7 +1069,7 @@ docker push $DOCKER_HUB_USER/$APP:$IMAGE_TAG
 set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
 APP="$1"; IMAGE_TAG="$2"
 
-some code to remove a docker hub tag because it's not implemented in the CLI....
+# some code to remove a docker hub tag because it's not implemented in the CLI....
 ```
 
 ### `uninstall`
